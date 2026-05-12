@@ -16,10 +16,13 @@
     "json",
     "react-i18next"
   ],
-  "homepage": "https://github.com/monkey-dev-vibes/claude-translate-suite/tree/main/packages/i18next",
+  "homepage": "https://github.com/Monkey-Dev-Vibes/claude-translate-suite/tree/main/packages/i18next",
+  "bugs": {
+    "url": "https://github.com/Monkey-Dev-Vibes/claude-translate-suite/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/monkey-dev-vibes/claude-translate-suite.git",
+    "url": "git+https://github.com/Monkey-Dev-Vibes/claude-translate-suite.git",
     "directory": "packages/i18next"
   },
   "license": "MIT",
@@ -50,7 +53,8 @@
     "build": "tsup src/index.ts src/cli.ts --format esm,cjs --dts --clean --sourcemap",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
     "@monkey-dev-vibes/claude-translate-core": "0.1.0"

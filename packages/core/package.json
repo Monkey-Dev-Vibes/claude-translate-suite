@@ -14,10 +14,13 @@
     "pipeline",
     "typescript"
   ],
-  "homepage": "https://github.com/monkey-dev-vibes/claude-translate-suite/tree/main/packages/core",
+  "homepage": "https://github.com/Monkey-Dev-Vibes/claude-translate-suite/tree/main/packages/core",
+  "bugs": {
+    "url": "https://github.com/Monkey-Dev-Vibes/claude-translate-suite/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/monkey-dev-vibes/claude-translate-suite.git",
+    "url": "git+https://github.com/Monkey-Dev-Vibes/claude-translate-suite.git",
     "directory": "packages/core"
   },
   "license": "MIT",
@@ -46,7 +49,8 @@
     "build": "tsup src/index.ts --format esm,cjs --dts --clean --sourcemap",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
   },
   "peerDependencies": {
     "@anthropic-ai/sdk": ">=0.30.0"
