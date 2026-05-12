@@ -20,6 +20,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - run: npm ci
+      # Build first so workspace consumers (i18next, sanity) can resolve
+      # @monkey-dev-vibes/claude-translate-core via its dist/ exports.
+      - run: npm run build
       - run: npm run typecheck
       - run: npm test
-      - run: npm run build
