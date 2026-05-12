@@ -1,5 +1,6 @@
 # claude-translate-suite
 
+[![CI](https://github.com/Monkey-Dev-Vibes/claude-translate-suite/actions/workflows/ci.yml/badge.svg)](https://github.com/Monkey-Dev-Vibes/claude-translate-suite/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![typescript](https://img.shields.io/badge/typescript-strict-blue.svg)](./tsconfig.base.json)
 
@@ -151,7 +152,7 @@ See [`packages/sanity/README.md`](./packages/sanity/README.md) for full configur
 
 ## Repo layout
 
-```
+```text
 claude-translate-suite/
 ├── packages/
 │   ├── core/         shared primitives
@@ -164,7 +165,7 @@ claude-translate-suite/
 ## Local development
 
 ```bash
-git clone https://github.com/monkey-dev-vibes/claude-translate-suite
+git clone https://github.com/Monkey-Dev-Vibes/claude-translate-suite
 cd claude-translate-suite
 npm install
 npm test          # runs every package's test suite
@@ -180,8 +181,4 @@ Every package's test suite uses injected mocks for the translator and reviewer �
 
 ## Contributing
 
-PRs welcome. Three rules:
-
-1. The `core` package must remain runtime-dependency-free except for its peer on `@anthropic-ai/sdk`.
-2. No domain-specific vocabulary, brand names, or industry rules in any package. Domain content belongs in user config.
-3. New behaviour ships with tests that exercise it via the injected mock path (no real Claude calls in the suite).
+PRs welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup, architecture invariants, and the three load-bearing rules (core stays runtime-dep-free, no baked-in domain content, every change ships with mocked tests).
