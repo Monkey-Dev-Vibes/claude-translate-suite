@@ -1,0 +1,30 @@
+{
+  "name": "claude-translate-suite",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Two-pass Claude translation pipelines with self-review, verdict states, and checkpoint resumability. Monorepo: core primitives + i18next JSON adapter + Sanity CMS adapter.",
+  "license": "MIT",
+  "author": "monkey-dev-vibes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monkey-dev-vibes/claude-translate-suite.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "clean": "rm -rf packages/*/dist packages/*/node_modules node_modules"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
